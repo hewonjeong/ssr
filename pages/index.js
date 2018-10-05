@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import { isClient } from '../utils';
 
 export const HeadComponent = () => (
   <Head>
@@ -11,6 +12,7 @@ const Index = ({ title = 'Testing SSR🤓' }) => (
   <div>
     <HeadComponent />
     <h2>{title}</h2>
+    <div>Rendered By: {isClient() ? 'client' : 'server'}</div>
   </div>
 );
 
